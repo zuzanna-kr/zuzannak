@@ -1,0 +1,98 @@
+<html>
+<head>
+  <meta http-equiv="Content-type" content="text/html; charset=ISO-8859-2" />  
+  <title>[ Tytul dokumentu ]</title>
+</head>
+<body>
+<script language="JavaScript">
+
+function dodawanie() {
+/* Odwołanie do formularza i jego elementów przez nazwę*/
+var skl1=parseFloat(document.Form.a.value);
+var skl2=parseFloat(document.Form.b.value);
+var wynik = skl1+skl2;
+alert(wynik);
+}
+</script>
+
+<form name="Form">
+a=<input type="Text" name="a"><br>
+b=<input type="Text" name="b"><br>
+<input type="Button" value="Oblicz sumę" onclick="dodawanie()">
+</form>
+<hr>
+
+<script language="JavaScript">
+function odejmowanie() {
+/* Odwołanie do formularza i jego elementów przez indeks
+Formularz o nazwie jakas_wymyslona_nazwa1 jest drugim formularzem w dokumencie więc ma indeks równy 1
+Pole tekstowe o nazwie jakas_wymyslona_nazwa2 jest pierwszym elementem formularza więc ma indeks równy 0
+*/
+var skl1=parseFloat(document.forms[1].elements[0].value);
+var skl2=parseFloat(document.forms[1].elements[1].value);
+var wynik = skl1-skl2;
+alert(wynik);
+}
+</script>
+
+<form name="jakas_wymyslona_nazwa1">
+a=<input type="Text" name="jakas_wymyslona_nazwa2"><br>
+b=<input type="Text" name="jakas_wymyslona_nazwa3"><br>
+<input type="Button" value="Oblicz różnicę" onclick="odejmowanie()">
+</form>
+<hr>
+
+<script language="JavaScript">
+function iloczyn() {
+var skl1=parseFloat(document.forms[2].elements[0].value);
+var skl2=parseFloat(document.forms[2].elements[1].value);
+var wynik = skl1*skl2;
+alert(wynik);
+}
+</script>
+
+<form name="mnozenie">
+a=<input type="Text" name="a"><br>
+b=<input type="Text" name="b"><br>
+<input type="Button" value="Oblicz iloczyn" onclick="iloczyn()">
+</form>
+<hr>
+<script language="JavaScript">
+function iloraz() {
+var skl1=parseFloat(document.forms[3].elements[0].value);
+var skl2=parseFloat(document.forms[3].elements[1].value);
+var wynik = skl1/skl2;
+alert(wynik);
+}
+</script>
+
+<form name="dzielenie">
+a=<input type="Text" name="a"><br>
+b=<input type="Text" name="b"><br>
+<input type="Button" value="Oblicz iloraz" onclick="iloraz()">
+</form>
+<hr>
+
+<script language="JavaScript">
+function bmi()
+{
+var skl1=parseFloat(document.kbmi.masa.value)
+var skl2=parseFloat(document.kbmi.wzrost.value)
+var wynik=skl1/(skl2*skl2);
+if(wynik<18.5) alert("niedowaga");
+if(wynik>25 && wynik<30) alert("otyĹoĹÄ");
+if(wynik>30) alert("nadwaga");
+if(wynik>18.5 && wynik<25) alert("norma");
+}
+</script>
+
+<form name="kbmi">
+masa= [kg]<input type="text" name="masa"><br>
+wzrost= [m]<input type="text" name="wzrost"><br>
+<input type="Button" value="Oblicz BMI" onclick="bmi()">
+</form>
+
+<hr>
+
+</body>
+</html>
